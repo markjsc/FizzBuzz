@@ -6,7 +6,7 @@ using NUnit.Framework;
 namespace FizzBuzz.Tests
 {
     [TestFixture]
-    public class NewFizzBuzzerTests
+    public class SuperFizzBuzzerTests
     {
         [Test]
         public void DoesFizzBuzzReturnFizzBuzzKablamWhenCounterIs15()
