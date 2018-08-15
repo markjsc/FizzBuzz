@@ -6,3 +6,6 @@ install:
 script:
   - xbuild /p:Configuration=Release FizzBuzz.sln
   - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./FizzBuzz.Tests/bin/Release/FizzBuzz.Tests.dll
+  - nuget pack ./FizzBuzz.App
+  
+ 
