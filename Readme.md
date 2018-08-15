@@ -1,4 +1,4 @@
-# FizzBuzz
+# FizzBuzz [![Build Status](https://travis-ci.org/markjsc/FizzBuzz.svg?branch=master)](https://travis-ci.org/markjsc/FizzBuzz)
 
 ## Purpose
 
@@ -25,5 +25,4 @@ To run the Unit Tests:
 
 ## CI Build
 
-I used [Travis-CI](https://travis-ci.org) for the CI build. It basically builds the solution, runs the tests, and creates a NuGet package that could be deployed. 
-(Since I don't have an environment where I can deploy, the package will just remain in the ether for now.)
+This uses [Travis-CI](https://travis-ci.org) for the CI build. It basically builds the solution and runs the tests. If I had plans to deploy this, I would also package it (NuGet pack) and push it (likely with Octo.exe).
