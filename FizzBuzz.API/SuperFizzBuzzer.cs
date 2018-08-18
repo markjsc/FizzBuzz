@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Text;
 
 namespace FizzBuzz.API
 {
@@ -13,8 +12,6 @@ namespace FizzBuzz.API
     {
         public static IEnumerable<string> FizzBuzz(int upperBound, Dictionary<int, string> actionValues)
         {
-            var output = new StringBuilder();
-
             for (var counter = 1; counter <= upperBound; counter++)
             {
                 string itemToAdd = string.Empty;
