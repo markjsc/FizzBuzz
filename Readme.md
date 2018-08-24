@@ -2,9 +2,9 @@
 
 ## Purpose
 
-This project was created as part of a technical interview. I can't disclose the company, but it was *Clear* that I had to provide a *Measure* of technical skill to be successful.
+This project was created as part of a technical interview. I was asked to build a classic [Fizz Buzz](https://en.wikipedia.org/wiki/Fizz_buzz) example with a few twists. Additionally, I was asked to create an extended example that allows the consume to pass in any desired words and count values instead of Fizz (3) and Buzz (5).
 
-A big thanks to Kyle for being patient with me during the interview. Hopefully the outcome shows that I can deliver a well thought-out solution in a short amount of time.
+I created a console app as the host and added unit tests and a CI build.
 
 ## Getting Started
 
