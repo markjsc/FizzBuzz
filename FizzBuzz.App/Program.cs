@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using FizzBuzz.API;
 
 namespace FizzBuzz.App
 {
     class Program
     {
-        const int UpperBound = 100;
-
         /// <summary>
         /// NOTE: I do NOT make all methods static in a normal application.
         /// However, this example has no state and is perfectly appropriate
@@ -25,7 +24,8 @@ namespace FizzBuzz.App
             Console.WriteLine();
             Console.WriteLine("Enter an option to continue:");
             Console.WriteLine("1) Run Original Fizz Buzzer");
-            Console.WriteLine("2) Run SUPER Fizz Buzzer");
+            Console.WriteLine("2) Run Better Fizz Buzzer");
+            Console.WriteLine("3) Run SUPER Fizz Buzzer");
             Console.WriteLine("Press ESCAPE to exit");
             Console.WriteLine();
         }
@@ -44,6 +44,10 @@ namespace FizzBuzz.App
                         break;
 
                     case ConsoleKey.D2:
+                        RunBetterFizzBuzzer();
+                        break;
+
+                    case ConsoleKey.D3:
                         RunSuperFizzBuzzer();
                         break;
 
@@ -65,7 +69,17 @@ namespace FizzBuzz.App
 
         private static void RunOriginalFizzBuzzer()
         {
-            foreach(var item in OriginalFizzBuzzer.FizzBuzz(UpperBound))
+            const int UpperBound = 100;
+            foreach (var item in OriginalFizzBuzzer.FizzBuzz(UpperBound))
+            {
+                Console.WriteLine(item);
+            }
+        }
+
+        private static void RunBetterFizzBuzzer()
+        {
+            const int UpperBound = 100;
+            foreach (var item in OriginalFizzBuzzer.FizzBuzz(UpperBound))
             {
                 Console.WriteLine(item);
             }
@@ -73,6 +87,7 @@ namespace FizzBuzz.App
 
         private static void RunSuperFizzBuzzer()
         {
+            const int UpperBound = 100;
             var actionValues = new Dictionary<int, string>
             {
                 { 3, "Clear" },

@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace FizzBuzz.API
 {
-    /// <summary>
-    /// NOTE: I do NOT make all methods static in a normal application.
-    /// However, this example has no state and is perfectly appropriate
-    /// to use static methods basically everywhere.
-    /// -Mark Johnston
-    /// </summary>
-    public static class OriginalFizzBuzzer
+    public static class BetterFizzBuzzer
     {
         public static IEnumerable<string> FizzBuzz(int upperBound)
         {
