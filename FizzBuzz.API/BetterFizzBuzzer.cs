@@ -3,17 +3,17 @@ using System.Linq;
 
 namespace FizzBuzz.API
 {
-    public static class BetterFizzBuzzer
+	public static class BetterFizzBuzzer
     {
         public static IEnumerable<string> FizzBuzz(int upperBound)
         {
             return Enumerable.Range(1, upperBound)
-                             .Select(counter => GetDisplayValue(counter));
+                             .Select(GetDisplayValue);
         }
 
         private static string GetDisplayValue(int counter)
         {
-            string itemToAdd = string.Empty;
+            var itemToAdd = string.Empty;
             if (counter % 3 == 0)
             {
                 itemToAdd = "Fizz";
