@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 
 namespace FizzBuzz.API
 {
@@ -13,28 +12,25 @@ namespace FizzBuzz.API
     {
         public static IEnumerable<string> FizzBuzz(int upperBound)
         {
-            return Enumerable.Range(1, upperBound)
-                             .Select(GetDisplayValue);
-        }
-
-        private static string GetDisplayValue(int counter)
-        {
-            string itemToAdd = string.Empty;
-            if (counter % 3 == 0)
+            for (var counter = 1; counter <= upperBound; counter++)
             {
-                itemToAdd = "Fizz";
-            }
-            if (counter % 5 == 0)
-            {
-                itemToAdd = $"{itemToAdd}Buzz";
-            }
+                var itemToAdd = string.Empty;
+                if (counter % 3 == 0)
+                {
+                    itemToAdd = "Fizz";
+                }
+                if (counter % 5 == 0)
+                {
+                    itemToAdd = $"{itemToAdd}Buzz";
+                }
 
-            if (string.IsNullOrEmpty(itemToAdd))
-            {
-                itemToAdd = $"{counter}";
-            }
+                if (string.IsNullOrEmpty(itemToAdd))
+                {
+                    itemToAdd = $"{counter}";
+                }
 
-            return itemToAdd;
+                yield return itemToAdd;
+            }
         }
     }
 }
