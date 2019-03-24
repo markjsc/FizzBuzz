@@ -7,6 +7,11 @@ namespace FizzBuzz.App
 {
     class Program
     {
+        private static MenuItemList _menuItemList = new MenuItemList()
+            .Register(ConsoleKey.D1, "1", "Run Original Fizz Buzzer", () => RunOriginalFizzBuzzer())
+            .Register(ConsoleKey.D2, "2", "Run Better Fizz Buzzer", () => RunBetterFizzBuzzer())
+            .Register(ConsoleKey.D3, "3", "Run SUPER Fizz Buzzer", () => RunSuperFizzBuzzer());
+
         /// <summary>
         /// NOTE: I do NOT make all methods static in a normal application.
         /// However, this example has no state and is perfectly appropriate
@@ -21,50 +26,13 @@ namespace FizzBuzz.App
 
         private static void ShowInstructions()
         {
-            Console.WriteLine();
-            Console.WriteLine("Enter an option to continue:");
-            Console.WriteLine("1) Run Original Fizz Buzzer");
-            Console.WriteLine("2) Run Better Fizz Buzzer");
-            Console.WriteLine("3) Run SUPER Fizz Buzzer");
-            Console.WriteLine("Press ESCAPE to exit");
-            Console.WriteLine();
+            Program._menuItemList.ShowInstructions();
         }
 
         private static void ProcessInput()
         {
             var input = Console.ReadKey(true).Key;
-            Console.Clear();
-
-            while (true)
-            {
-                switch (input)
-                {
-                    case ConsoleKey.D1:
-                        RunOriginalFizzBuzzer();
-                        break;
-
-                    case ConsoleKey.D2:
-                        RunBetterFizzBuzzer();
-                        break;
-
-                    case ConsoleKey.D3:
-                        RunSuperFizzBuzzer();
-                        break;
-
-                    case ConsoleKey.Escape:
-                        Console.WriteLine("Goodbye...");
-                        Environment.Exit(0);
-                        break;
-
-                    default:
-                        Console.WriteLine("Unknown input - try again.");
-                        break;
-                }
-
-                ShowInstructions();
-                input = Console.ReadKey(true).Key;
-                Console.Clear();
-            }
+            Program._menuItemList.PerformOperation(input);
         }
 
         private static void RunOriginalFizzBuzzer()
